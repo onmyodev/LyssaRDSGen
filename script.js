@@ -312,7 +312,7 @@ try {
 
     document.getElementById('generateSpkBtn').disabled = true;
     document.getElementById('generateLkpBtn').disabled = true;
-    document.getElementById('output').textContent = `Error initializing cryptography: ${error.message}`;
+    document.getElementById('output').textContent = `初始化密码学工具包失败，错误是：${error.message}`;
 }
 
 function getSpkid(pid) {
@@ -531,15 +531,15 @@ const outputPre = document.getElementById('output');
 function setLoading(button, isLoading) {
     if (isLoading) {
         button.disabled = true;
-        button.textContent = 'Generating...';
-        outputPre.textContent = 'Working...';
+        button.textContent = '生成中……';
+        outputPre.textContent = '正在处理……';
         outputPre.classList.remove('error');
         outputPre.classList.add('loading');
     } else {
         button.disabled = false;
 
-        if (button.id === 'generateSpkBtn') button.textContent = 'Generate License Server ID (SPK)';
-        if (button.id === 'generateLkpBtn') button.textContent = 'Generate License Key Pack (LKP)';
+        if (button.id === 'generateSpkBtn') button.textContent = '生成许可证服务器ID（SPK）';
+        if (button.id === 'generateLkpBtn') button.textContent = '生成许可证密钥包（LKP）';
         outputPre.classList.remove('loading');
     }
 }
@@ -547,7 +547,7 @@ function setLoading(button, isLoading) {
 generateSpkFrm.addEventListener('submit', async () => {
     const pid = pidInput.value.trim();
     if (!pid) {
-        outputPre.textContent = 'Error: Product ID (PID) is required.';
+        outputPre.textContent = '错误：产品ID（PID）是必需的。';
         outputPre.classList.add('error');
         return;
     }
@@ -559,11 +559,11 @@ generateSpkFrm.addEventListener('submit', async () => {
     setLoading(generateSpkBtn, true);
     try {
         const spk = await generateSpk(pid);
-        outputPre.textContent = `License Server ID (SPK):\n${spk}`;
+        outputPre.textContent = `许可证服务器ID（SPK）:\n${spk}`;
         outputPre.classList.remove('error');
     } catch (error) {
         console.error("SPK Generation Error:", error);
-        outputPre.textContent = `Error generating SPK: ${error.message}`;
+        outputPre.textContent = `生成许可证服务器ID（SPK）时出错：${error.message}`;
         outputPre.classList.add('error');
     } finally {
         setLoading(generateSpkBtn, false);
@@ -576,7 +576,7 @@ generateLkpFrm.addEventListener('submit', async () => {
     const chidVerStr = chidVerInput.value.trim();
 
     if (!pid || !countStr || !chidVerStr) {
-        outputPre.textContent = 'Error: PID, Count, License Type, and License Version are required for LKP.';
+        outputPre.textContent = '错误：生成许可证密钥包（LKP）需要产品ID（PID）、数量、许可证类型和许可证版本。';
         outputPre.classList.add('error');
         return;
     }
@@ -588,7 +588,7 @@ generateLkpFrm.addEventListener('submit', async () => {
 
     const chidVerMatch = chidVerStr.match(/^(\d+)_(\d+)_(\d+)$/);
     if (!chidVerMatch) {
-        outputPre.textContent = 'Error: CHID and Version must be in CHID_Major_Minor format (e.g., 001_5_0).';
+        outputPre.textContent = '错误：CHID 和版本必须采用 CHID_主版本_次版本 格式（例如，001_5_0）。';
         outputPre.classList.add('error');
         return;
     }
@@ -608,7 +608,7 @@ generateLkpFrm.addEventListener('submit', async () => {
         BigInt(chid);
 
     } catch (e) {
-        outputPre.textContent = `Error: Invalid numeric input: ${e.message}`;
+        outputPre.textContent = `错误：无效的数字输入：${e.message}`;
         outputPre.classList.add('error');
         return;
     }
@@ -616,15 +616,15 @@ generateLkpFrm.addEventListener('submit', async () => {
     setLoading(generateLkpBtn, true);
     try {
         const lkp = await generateLkp(pid, count, majorVer, minorVer, chid);
-        outputPre.textContent = `License Key Pack ID (LKP):\n${lkp}`;
+        outputPre.textContent = `许可证密钥包（LKP）:\n${lkp}`;
         outputPre.classList.remove('error');
     } catch (error) {
         console.error("LKP Generation Error:", error);
-        outputPre.textContent = `Error generating LKP: ${error.message}`;
+        outputPre.textContent = `生成许可证密钥包（LKP）时出错：${error.message}`;
         outputPre.classList.add('error');
     } finally {
         setLoading(generateLkpBtn, false);
     }
 });
 
-outputPre.textContent = 'Enter details above and click one of the "Generate" buttons.';
+outputPre.textContent = '请输入上方的详细信息并点击其中一个“生成”按钮。';

@@ -1,21 +1,23 @@
 # LyssaRDSGen
 
-## Overview
+本项目是对原项目 [LyssaRDSGen](https://github.com/thecatontheceiling/LyssaRDSGen) 的中文翻译。
 
-LyssaRDSGen is a website designed for the generation of Service Provider Keys (SPKs), also known as License Server IDs, and License Key Packs (LKPs). These keys are utilized in the activation process for Microsoft Remote Desktop Services (RDS) and associated Client Access Licenses (CALs).
+## 概述
 
-## Access
+LyssaRDSGen 是一个基于网页的服务器许可证 ID 和许可证密钥包 ID 生成工具。Microsoft 远程桌面服务和客户端访问许可证的激活流程中会使用这些密钥。
 
-The website can be accessed at the following address:
-[https://thecatontheceiling.github.io/LyssaRDSGen/](https://thecatontheceiling.github.io/LyssaRDSGen/)
+## 访问
 
-## Technical Basis
+您可以在 
+[https://thecatontheceiling.github.io/LyssaRDSGen/](https://thecatontheceiling.github.io/LyssaRDSGen/) 上访问此工具（原版，未汉化）。
 
-This project leverages foundational research conducted by [WitherOrNot](https://github.com/WitherOrNot), based on which he developed a PoC CLI tool in Python (which can be found in his [GitHub gist](https://gist.github.com/WitherOrNot/c34c4c7b893e89ab849ce04e007d89a9)). 
+## 技术基础
 
-## Acknowledgements
+该项目参考了 [WitherOrNot](https://github.com/WitherOrNot) 进行的研究，并使用了他在该 [GitHub gist](https://gist.github.com/WitherOrNot/c34c4c7b893e89ab849ce04e007d89a9) 中列出的概念验证代码。
 
-I extend my gratitude to the following individuals for their contributions:
+## 致谢
 
-*   **[WitherOrNot](https://github.com/WitherOrNot)** - Foundational research, code contributions.
-*   **[asdcorp](https://github.com/asdcorp)** - Initial assistance with getting setup.
+十分感谢下列人员对本项目做出的贡献：
+
+*   **[WitherOrNot](https://github.com/WitherOrNot)** - 基础研究、代码贡献。
+*   **[asdcorp](https://github.com/asdcorp)** - 在起步时给予了帮助。

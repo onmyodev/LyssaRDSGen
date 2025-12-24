@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/water.css@2/out/water.css">
-    <title>LyssaRDSGen</title>
+    <title>远程桌面服务</title>
     <style>
         label { display: block; margin-top: 10px; font-weight: bold; }
         input, select {
@@ -18,64 +18,64 @@
 </head>
 <body>
 
-    <h1>LyssaRDSGen</h1>
+    <h1>远程桌面服务</h1>
 
-    <p>Enter the Product ID (PID) and optionally the License Key Pack (LKP) details.</p>
+    <p>请输入产品ID（PID）和可选的许可证密钥包（LKP）详细信息。</p>
     
     <form id="generateSpkFrm" action="javascript:void(0)">
         <div>
-            <label for="pid">Product ID (PID):</label>
-            <input type="text" id="pid" placeholder="e.g., 00490-92005-99454-AT527" pattern="(\d{5}-\d{5}-\d{5}-[A-Z]{2}\d{3})|(\d{5}-OEM-\d{7}-\d{5})|(\d{5}-\d{3}-\d{7}-\d{5})" required>
+            <label for="pid">产品ID（PID）:</label>
+            <input type="text" id="pid" placeholder="例如，00490-92005-99454-AT527" pattern="(\d{5}-\d{5}-\d{5}-[A-Z]{2}\d{3})|(\d{5}-OEM-\d{7}-\d{5})|(\d{5}-\d{3}-\d{7}-\d{5})" required>
         </div>
 
-        <button type="submit" id="generateSpkBtn">Generate License Server ID (SPK)</button>
+        <button type="submit" id="generateSpkBtn">生成许可证服务器ID（SPK）</button>
     </form>
 
     <hr>
 
     <form id="generateLkpFrm" action="javascript:void(0)">
-        <h2>Generate License Key Pack (LKP)</h2>
+        <h2>生成许可证密钥包（LKP）</h2>
         <div>
-            <label for="count">License Count:</label>
-            <input type="number" id="count" placeholder="e.g., 1234" min="1" max="9999">
+            <label for="count">许可证数量:</label>
+            <input type="number" id="count" placeholder="例如，1234" min="1" max="9999">
         </div>
         <div>
-            <label for="chidverselect">License Version and Type:</label>
+            <label for="chidverselect">许可证版本和类型:</label>
             <select id="chidverselect">
-                <option value="001_5_0">Windows 2000 Per Device</option>
-                <option value="002_5_0">Windows 2000 Internet Connector</option>
-                <option value="003_5_2">Windows Server 2003 Per User</option>
-                <option value="004_5_2">Windows Server 2003 Per Device</option>
-                <option value="005_6_0">Windows Server 2008 (R2) Per Device</option>
-                <option value="006_6_0">Windows Server 2008 (R2) Per User</option>
-                <option value="009_6_0">Windows Server 2008 (R2) VDI Standard </option>
-                <option value="010_6_0">Windows Server 2008 (R2) VDI Premium </option>
-                <option value="016_6_0">Windows Server 2008 (R2) VDI Suite </option>
-                <option value="011_6_2">Windows Server 2012 (R2) Per Device</option>
-                <option value="012_6_2">Windows Server 2012 (R2) Per User</option>
-                <option value="015_6_2">Windows Server 2012 (R2) VDI Suite </option>
-                <option value="020_10_0">Windows Server 2016 Per Device</option>
-                <option value="021_10_0">Windows Server 2016 Per User</option>
-                <option value="022_10_0">Windows Server 2016 VDI Suite </option>
-                <option value="026_10_1">Windows Server 2019 Per Device</option>
-                <option value="027_10_1">Windows Server 2019 Per User</option>
-                <option value="028_10_1">Windows Server 2019 VDI Suite </option>
-                <option value="029_10_2">Windows Server 2022 Per Device</option>
-                <option value="030_10_2">Windows Server 2022 Per User</option>
-                <option value="031_10_2">Windows Server 2022 VDI Suite </option>
-                <option value="032_10_3">Windows Server 2025 Per Device</option>
-                <option value="033_10_3">Windows Server 2025 Per User</option>
-                <option value="034_10_3">Windows Server 2025 VDI Suite </option>
+                <option value="001_5_0">Windows 2000 每设备</option>
+                <option value="002_5_0">Windows 2000 Internet 连接器</option>
+                <option value="003_5_2">Windows Server 2003 每用户</option>
+                <option value="004_5_2">Windows Server 2003 每设备</option>
+                <option value="005_6_0">Windows Server 2008 (R2) 每设备</option>
+                <option value="006_6_0">Windows Server 2008 (R2) 每用户</option>
+                <option value="009_6_0">Windows Server 2008 (R2) VDI 标准版 </option>
+                <option value="010_6_0">Windows Server 2008 (R2) VDI 高级版 </option>
+                <option value="016_6_0">Windows Server 2008 (R2) VDI 套件 </option>
+                <option value="011_6_2">Windows Server 2012 (R2) 每设备</option>
+                <option value="012_6_2">Windows Server 2012 (R2) 每用户</option>
+                <option value="015_6_2">Windows Server 2012 (R2) VDI 套件 </option>
+                <option value="020_10_0">Windows Server 2016 每设备</option>
+                <option value="021_10_0">Windows Server 2016 每用户</option>
+                <option value="022_10_0">Windows Server 2016 VDI 套件 </option>
+                <option value="026_10_1">Windows Server 2019 每设备</option>
+                <option value="027_10_1">Windows Server 2019 每用户</option>
+                <option value="028_10_1">Windows Server 2019 VDI 套件 </option>
+                <option value="029_10_2">Windows Server 2022 每设备</option>
+                <option value="030_10_2">Windows Server 2022 每用户</option>
+                <option value="031_10_2">Windows Server 2022 VDI 套件 </option>
+                <option value="032_10_3">Windows Server 2025 每设备</option>
+                <option value="033_10_3">Windows Server 2025 每用户</option>
+                <option value="034_10_3">Windows Server 2025 VDI 套件 </option>
             </select>
         </div>
         
-        <button type="submit" id="generateLkpBtn">Generate License Key Pack (LKP)</button>
+        <button type="submit" id="generateLkpBtn">生成许可证密钥包（LKP）</button>
     </form>
 
     <hr>
 
-    <h2>Output:</h2>
-    <pre><code id="output">Enter details above and click one of the "Generate" buttons.</code></pre>
+    <h2>输出:</h2>
+    <pre><code id="output">请输入上方的详细信息并点击其中一个“生成”按钮。</code></pre>
 
     <script type="importmap">
         {

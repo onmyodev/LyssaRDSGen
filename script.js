@@ -13,7 +13,6 @@ import {
 import {
     randomBytes
 } from 'hashes/utils'
-import { md5 } from 'js-md5'
 
 const KCHARS = "BCDFGHJKMPQRTVWXY2346789";
 
@@ -148,7 +147,7 @@ async function sha1(data) {
 }
 
 async function md5Hash(data) {
-    const hashArray = md5.array(data);
+    const hashArray = md5_explode(hex_md5(String.fromCharCode(...data)));
     return new Uint8Array(hashArray);
 }
 

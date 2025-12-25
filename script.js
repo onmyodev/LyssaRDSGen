@@ -559,7 +559,7 @@ generateSpkFrm.addEventListener('submit', async () => {
     setLoading(generateSpkBtn, true);
     try {
         const spk = await generateSpk(pid);
-        outputPre.textContent = `许可证服务器ID（SPK）:\n${spk}`;
+        outputPre.textContent = spk;
         outputPre.classList.remove('error');
     } catch (error) {
         console.error("SPK Generation Error:", error);
@@ -616,7 +616,7 @@ generateLkpFrm.addEventListener('submit', async () => {
     setLoading(generateLkpBtn, true);
     try {
         const lkp = await generateLkp(pid, count, majorVer, minorVer, chid);
-        outputPre.textContent = `许可证密钥包（LKP）:\n${lkp}`;
+        outputPre.textContent = lkp;
         outputPre.classList.remove('error');
     } catch (error) {
         console.error("LKP Generation Error:", error);

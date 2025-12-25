@@ -9,7 +9,8 @@ LyssaRDSGen 是一个基于网页的服务器许可证 ID 和许可证密钥包 
 ## 访问
 
 您可以在 
-[https://thecatontheceiling.github.io/LyssaRDSGen/](https://thecatontheceiling.github.io/LyssaRDSGen/) 上访问此工具（原版，未汉化）。
+[https://onmyoji.xyz/](https://onmyoji.xyz/) 上访问此工具。
+（别问我为啥域名长这个样子，纯粹是因为我就有这么个闲置的域名）
 
 ## 技术基础
 

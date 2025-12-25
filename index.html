@@ -9,11 +9,26 @@
             font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
             margin: 0;
         }
-        h1 {
+        .title {
             border-bottom: 5px solid #eee;
             margin: 0;
-            margin-bottom: 1em;
-            padding: 1em;
+            margin-bottom: 2em;
+            padding: 1.5em;
+            padding-bottom: 0;
+        }
+        h1 {
+            margin: 0;
+            font-weight: normal;
+        }
+        .nav-links {
+            margin-top: 0.5em;
+            display: flex;
+        }
+        .nav-links a {
+            margin: 1em 2em;
+            margin-left: 0;
+            text-decoration: none;
+            color: black;
         }
         p {
             margin: 1em;
@@ -65,7 +80,13 @@
 </head>
 <body>
 
-    <h1>远程桌面服务</h1>
+    <div class="title">
+        <h1>远程桌面服务</h1>
+        <div class="nav-links">
+            <a href="https://github.com/thecatontheceiling/LyssaRDSGen">原地址</a>
+            <a href="https://github.com/onmyodev/LyssaRDSGen">本 Fork 地址</a>
+        </div>
+    </div>
     <p>欢迎使用 LyssaRDGen。对，我翻译完了还特意把界面做成了跟微软那个网站差不多的风格。</p>
     <p>请输入产品ID（PID）和可选的许可证密钥包（LKP）详细信息。</p>
     
